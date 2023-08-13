@@ -5,34 +5,124 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Deadlands Compagnon</title>
     <script type="module" src="js/app.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
+
+    <!--link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.2.19/dist/tailwind.min.css" rel="stylesheet"-->
 </head>
 
-<body class="bg-stone-50" x-data="appData" >
-<nav class="bg-yellow-900 p-4 flex items-center">
-    <button @click="isMenuOpen = !isMenuOpen" class="text-white text-2xl">
-        &#9776;
-    </button>
-    <div class="col-span-2 text-white text-xl font-bold font-serif text-center flex-grow">Deadlands Compagnon</div>
-</nav>
+<body class="bg-orange-50" x-data="appData" >
+    <div class="sticky top-0 z-1">
+        <!--HEADER APP-->
+        <nav class="bg-amber-600 p-4 flex items-center">
+            <button @click="isMenuOpen = !isMenuOpen" class="text-white text-2xl">
+                &#9776;
+            </button>
+            <div class="col-span-2 text-white text-xl font-bold font-serif text-center flex-grow">Deadlands Compagnon</div>
+        </nav>
 
-    <div class="z-10 absolute bg-gray-100 rounded-lg shadow w-44 " x-show="isMenuOpen">
-        <a class="block px-4 py-1 hover:bg-gray-300" @click="isMenuOpen = false; selectedItem = 'menu-table'">Table</a>
-        <a class="block px-4 py-2 hover:bg-gray-300" @click="isMenuOpen = false; selectedItem = 'menu-bestiaire'">Bestiaire</a>
-    </div>
+        <!--MENU DEROULANT-->
+        <div class="z-10 absolute bg-orange-50 rounded-lg shadow w-44 border-2 border-orange-300" x-show="isMenuOpen">
+            <a class="block px-4 py-1 hover:bg-orange-300" @click="isMenuOpen = false; selectedMenuItem = 'menu-table'">Table</a>
+            <a class="block px-4 py-2 hover:bg-orange-300" @click="isMenuOpen = false; selectedMenuItem = 'menu-pouvoirs'">Pouvoirs</a>
+            <a class="block px-4 py-2 hover:bg-orange-300" @click="isMenuOpen = false; selectedMenuItem = 'menu-bestiaire'">Bestiaire</a>
+        </div>
 
-
-    <div class="px-4 w-screen">
-        <div x-show="selectedItem === 'menu-table'" >
-            <h2 class="text-2xl">Tables</h2>
+        <!--HEADER COMMON-->
+        <div class="px-4 py-1 w-screen bg-orange-50" >
+            <input type="text" x-model="searchTerm"  placeholder="Rechercher..." class="mt-2 p-1 border rounded-lg">
+        </div>
+        <!--HEADER PAGE TABLE-->
+        <div class="px-4 py-1 w-screen bg-orange-50" x-show="selectedMenuItem === 'menu-table'" >
             <select x-model="selectedTable" @change="selectedTableData = tables[selectedTable]">
                 <option value="">Sélectionner une table</option>
                 <template x-for="(tableData, tableName) in tables">
                     <option :value="tableName" x-text="tableData.title"></option>
                 </template>
             </select>
-            <div x-show="selectedTable && selectedTableData">
-                <h2 class="bg-gray-800 text-white py-2 px-2" x-text="selectedTableData ? selectedTableData.title : ''"></h2>
+        </div>
+    </div>
+
+    <div class="px-4 w-screen">
+
+        <!-- TABLES -->
+        <div x-show="selectedMenuItem === 'menu-table' && selectedTable && selectedTableData">
+            <!--h2 class="bg-gray-800 text-white py-2 px-2" x-text="selectedTableData ? selectedTableData.title : ''"></h2-->
+            <table class="w-full px-2">
+                <thead class="hidden md:visible">
+                    <tr class="grid  md:grid-cols-6">
+                        <th>Nom</th>
+                        <th class="md:col-span-5">Description</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y ">
+                    <template x-if="selectedTable && selectedTableData">
+                            <template x-for="item in filteredTableItems">
+                                <tr class="grid grid-cols-1 md:grid-cols-6 mb-2 md:mb-0">
+                                    <td class="bg-orange-300 md:bg-transparent text-center italic bold" x-text="item.name"></td>
+                                    <td class="md:col-span-5 text-justify" x-html="item.description"></td>
+                                </tr>
+                            </template>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- POUVOIRS -->
+        <div x-show="selectedMenuItem === 'menu-pouvoirs'">
+            <div class="mb-4">
+                <label for="filterByArcane" class="block font-medium">Filtrer par arcane :</label>
+                <select id="filterByArcane" x-model="selectedArcane" class="border rounded p-1">
+                    <option value="">Tous</option>
+                    <option value="chaman">Chaman</option>
+                    <option value="elu">Élu</option>
+                    <option value="huckster">Huckster</option>
+                    <option value="savant_fou">Savant Fou</option>
+                    <option value="maitre_chi">Maître Chi</option>
+                </select>
+            </div>
+            <table class="w-full px-2">
+                <thead class="hidden md:visible">
+                <tr class="grid  md:grid-cols-6">
+                    <th>Nom</th>
+                    <th class="md:col-span-5">Description</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y ">
+                    <template x-for="item in filteredTablePouvoirs">
+                        <tr class="grid grid-cols-1 md:grid-cols-6 mb-2 md:mb-0">
+                            <td class="bg-orange-300 md:bg-transparent text-center font-semibold" x-text="item.name"></td>
+                            <td>
+                                <div>
+                                    <i class="fa-solid fa-medal"></i>
+                                    <span>Rang:</span>
+                                    <span x-text="item.rank"></span>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-bolt-lightning"></i>
+                                    <span>PP:</span>
+                                    <span x-text="item.pp"></span>
+                                </div>
+
+                                <div>
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span x-text="item.duration"></span>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-ruler"></i>
+                                    <span x-text="item.range"></span>
+                                </div>
+                            </td>
+                            <td class="md:col-span-4 text-justify" x-html="item.description"></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BESTIAIRE -->
+        <div x-show="selectedMenuItem === 'menu-bestiaire'">
+                <!--h2 class="bg-gray-800 text-white py-2 px-2" x-text="selectedTableData ? selectedTableData.title : ''"></h2-->
                 <table class="w-full px-2">
                     <thead class="hidden md:visible">
                     <tr class="grid  md:grid-cols-6">
@@ -40,24 +130,50 @@
                         <th class="md:col-span-5">Description</th>
                     </tr>
                     </thead>
-                    <tbody class="divide-y ">
-                    <template x-if="selectedTable && selectedTableData">
-                            <template x-for="item in selectedTableData.items" >
-                                <tr class="grid grid-cols-1 md:grid-cols-6 mb-2 md:mb-0">
-                                    <td class="bg-yellow-600 md:bg-transparent text-center italic bold" x-text="item.name"></td>
-                                    <td class="md:col-span-5" x-html="item.description"></td>
-                                </tr>
-                            </template>
-                    </template>
+                    <tbody class="divide-y">
+                        <template x-for="item in filteredTableBestiaire">
+                            <tr class="grid grid-cols-2 md:grid-cols-6 items-baseline mb-2 md:mb-0">
+                                <td class="col-span-2 bg-orange-300 md:bg-transparent text-center italic font-bold" x-text="item.name"></td>
+                                <td x-text="item.type +' (' + item.page +')'"></td>
+                                <td class="text-right">
+                                    <button @click="showDetailBestiaire(item)" class="bg-amber-700 hover:bg-amber-800 text-white font-bold rounded mt-2">
+                                        <i class="fas fa-info-circle m-1"></i>
+                                    </button>
+                                </td>
+                                <td class="col-span-2 md:col-span-4 text-justify" x-html="item.description"></td>
+                            </tr>
+                        </template>
                     </tbody>
                 </table>
 
-            </div>
         </div>
 
-        <div x-show="selectedItem === 'menu-bestiaire'">
-            <h2 class="text-2xl">Bestiaire</h2>
+        <!-- DETAIL BESTIAIRE -->
+        <div x-show="selectedMenuItem === 'menu-detail-bestiaire'">
+            <button @click="selectedMenuItem = 'menu-bestiaire'" class="bg-amber-700 hover:bg-amber-800 text-white font-bold rounded m-2 px-2">
+                <i class="fas fa-arrow-left mr-2"></i> Retour
+            </button>
+            <div class="flex flex-col">
+                <div class="font-bold italic bg-orange-300 text-center text-xl" x-text="selectedDetailBestiaire.name"></div>
+            </div>
+            <div class="bg-orange-200 grid grid-cols-5 auto-cols-auto my-4 py-2 justify-items-center border-y-2 border-black font-semibold">
+                <div>Agi</div>
+                <div>Âme</div>
+                <div>For</div>
+                <div>Int</div>
+                <div>Vig</div>
+                <div x-text="selectedDetailBestiaire.agi"></div>
+                <div x-text="selectedDetailBestiaire.ame"></div>
+                <div x-text="selectedDetailBestiaire.for"></div>
+                <div x-text="selectedDetailBestiaire.int"></div>
+                <div x-text="selectedDetailBestiaire.vig"></div>
+
+
+
+            </div>
+
         </div>
+
     </div>
 
 
