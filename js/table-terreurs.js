@@ -1,8 +1,8 @@
 const table_terreurs = {
       title: 'Terreurs (jet d20)',
       items: [
-  { "name": '4-6', "description": '<b>Distrait:</b> Le personnage est Distrait jusqu\'à la fin de son prochain tour.' },
-  { "name": '7-9', "description": '<b>Vulnérable:</b> Le personnage est Vulnérable jusque la fin de son prochain tour.' },
+  { "name": '04-6', "description": '<b>Distrait:</b> Le personnage est Distrait jusqu\'à la fin de son prochain tour.' },
+  { "name": '07-9', "description": '<b>Vulnérable:</b> Le personnage est Vulnérable jusque la fin de son prochain tour.' },
   { "name": '10-12', "description": '<b>Secoué:</b> Le personnage est Secoué.' },
   { "name": '13', "description": '<b>Marqué par la terreur:</b> Le personnage est Sonné et souffre d\'une altération physique purement cosmétique - une mèche de cheveux blancs, les yeux clignant constamment ou autre manifestation physique mineure.' },
   { "name": '14-15', "description": '<b>Effrayé:</b> Le personnage subit le Handicap Hésitant pour le reste de la rencontre. Il devient Paniqué s\'il est déjà Hésitant.' },
