@@ -1,0 +1,177 @@
+[
+  {
+    "name": "As",
+    "name-orig": "Ace",
+    "description": "Ignorez deux points de pénalités sur n'importe quel jet de Navigation, Conduite ou Pilotage. Dépensez des Jetons de destin pour Encaisser les dégâts de n'importe quel véhicule qu'ils contrôlent.",
+    "description-orig": "Ignore two points of penalties to any Boating, Driving, or Piloting roll. Spend Bennies to Soak damage for any vehicle they control.",
+    "prerequis": "Le talent nécessite : Agilité de d8"
+  },
+  {
+    "name": "Acrobate",
+    "name-orig": "Acrobat",
+    "description": "Peut relancer la plupart des jets d'Athlétisme.",
+    "description-orig": "May Reroll most Athletics.",
+    "prerequis": "Le talent nécessite : Agilité de d8 ; Le talent nécessite : Compétence Athlétisme de d8"
+  },
+  {
+    "name": "Vigilance",
+    "name-orig": "Alertness",
+    "description": "+2 aux tests de Remarque.",
+    "description-orig": "+2 to Notice tests.",
+    "prerequis": ""
+  },
+  {
+    "name": "Ambidextre",
+    "name-orig": "Ambidextrous",
+    "description": "Ignorez une pénalité de -2 lors des jets de Caractéristique avec la main non dominante.",
+    "description-orig": "Ignore –2 penalty when making Trait rolls with off-hand.",
+    "prerequis": "Le talent nécessite : Agilité de d8"
+  },
+  {
+    "name": "Origines Arcanes",
+    "name-orig": "Arcane Background",
+    "description": "Permet d'accéder aux Origines Arcanes répertoriées au Chapitre Cinq.",
+    "description-orig": "Allows access to the Arcane Backgrounds listed in Chapter Five.",
+    "prerequis": ""
+  },
+  {
+    "name": "Résistance Arcane",
+    "name-orig": "Arcane Resistance",
+    "description": "+2 aux jets de Caractéristique pour résister aux effets magiques ; les dégâts magiques sont réduits de 2.",
+    "description-orig": "+2 to Trait rolls to resist magical effects; magical damage is reduced by 2.",
+    "prerequis": "Le talent nécessite : Esprit de d8"
+  },
+  {
+    "name": "Aristocrate",
+    "name-orig": "Aristocrat",
+    "description": "+2 aux Connaissances Générales et aux contacts avec la classe supérieure.",
+    "description-orig": "+2 to Common Knowledge and networking with upper class.",
+    "prerequis": ""
+  },
+  {
+    "name": "Artificier",
+    "name-orig": "Artificer",
+    "description": "Permet à l'utilisateur de créer des Dispositifs Arcanes.",
+    "description-orig": "Allows user to create Arcane Devices.",
+    "prerequis": "Le talent nécessite : Personnage Confirmé ; Le talent nécessite : Origines Arcanes"
+  },
+  {
+    "name": "Assassin",
+    "name-orig": "Assassin",
+    "description": "+2 aux dégâts contre les ennemis Vulnérables ou lorsque l'assassin a l'Avantage de la Surprise.",
+    "description-orig": "+2 to damage foes when Vulnerable or assassin has The Drop.",
+    "prerequis": "Le talent nécessite : Agilité de d8 ; Le talent nécessite : Compétence Combat de d6 ; Le talent nécessite : Compétence Discrétion de d8"
+  },
+  {
+    "name": "Séduisant",
+    "name-orig": "Attractive",
+    "description": "+1 aux jets de Persuasion.",
+    "description-orig": "+1 to Persuasion rolls.",
+    "prerequis": "Le talent nécessite : Vigueur de d6"
+  },
+  {
+    "name": "Lien Animal",
+    "name-orig": "Beast Bond",
+    "description": "Le héros peut dépenser des Jetons de destin pour les animaux sous son contrôle.",
+    "description-orig": "The hero may spend Bennies for animals under her control.",
+    "prerequis": ""
+  },
+  {
+    "name": "Maître des Animaux",
+    "name-orig": "Beast Master",
+    "description": "Les animaux aiment votre héros et il a un animal de compagnie en quelque sorte. Voir le texte.",
+    "description-orig": "Animals like your hero and he has a pet of some sort. See text.",
+    "prerequis": "Le talent nécessite : Esprit de d8"
+  },
+  {
+    "name": "Berserk",
+    "name-orig": "Berserk",
+    "description": "Après avoir été Secoué ou Blessé, les attaques en mêlée doivent être des Attaques Sauvages, +2 à la Résistance, ignorez un niveau de pénalités pour les Blessures, un Échec Critique au jet de Combat fait que l'attaque en mêlée touche une cible aléatoire. Dure jusqu'à ce qu'il n'y ait plus d'ennemis en vue ou que le héros fasse un jet d'Intelligence à -2.",
+    "description-orig": "After being Shaken or Wounded, melee attacks must be Wild Attacks, +2 to Toughness, ignore one level of Wound penalties, Critical Failure on Fighting roll hits random target. Lasts until there are no foes in sight or hero makes Smarts roll at –2.",
+    "prerequis": ""
+  },
+  {
+    "name": "Blocage",
+    "name-orig": "Block",
+    "description": "+1 à la Parade, ignorez 1 point de bonus de Supériorité.",
+    "description-orig": "+1 Parry, ignore 1 point of Gang Up bonus.",
+    "prerequis": "Le talent nécessite : Compétence Combat de d8 ; Le talent nécessite : Personnage Confirmé"
+  },
+  {
+    "name": "Renforcement",
+    "name-orig": "Bolster",
+    "description": "Peut supprimer l'état Distrait ou Vulnérable après un Test.",
+    "description-orig": "May remove Distracted or Vulnerable state after a Test.",
+    "prerequis": "Le talent nécessite : Esprit de d8"
+  },
+  {
+    "name": "Brave",
+    "name-orig": "Brave",
+    "description": "+2 aux tests de Crainte et -2 aux jets sur la Table de Crainte.",
+    "description-orig": "+2 to Fear tests and –2 to rolls on the Fear Table.",
+    "prerequis": "Le talent nécessite : Esprit de d6"
+  },
+  {
+    "name": "Bagarreur",
+    "name-orig": "Brawler",
+    "description": "Résistance +1, ajoutez un d4 aux dégâts à mains nues ou augmentez-le d'un niveau s'il est combiné avec Artistes Martiaux, Griffes, etc.",
+    "description-orig": "Toughness +1, add d4 to unarmed damage or increase it a step if combined with Martial Artist, Claws, etc.",
+    "prerequis": "Le talent nécessite : Force de d8 ; Le talent nécessite : Vigueur de d8"
+  },
+  {
+    "name": "Costaud",
+    "name-orig": "Brawny",
+    "description": "Taille (et donc Résistance) +1. Traitez les exigences minimales de Force comme un dé de type inférieur ; traitez la Force comme un dé de type supérieur pour l'Encombrement.",
+    "description-orig": "Size (and therefore Toughness) +1. Treat Minimum Strength requirements as one die type less; treat Strength as one die type higher for Encumbrance.",
+    "prerequis": "Le talent nécessite : Force de d6 ; Le talent nécessite : Vigueur de d6"
+  },
+  {
+    "name": "Bagarreur",
+    "name-orig": "Bruiser",
+    "description": "Augmente les dégâts de Force à mains nues d'un dé et la Résistance d'un autre +1.",
+    "description-orig": "Increase unarmed Strength damage a die type and Toughness another +1.",
+    "prerequis": "Le talent nécessite : Personnage Confirmé ; Le talent nécessite : bord Bagarreur"
+  },
+  {
+    "name": "Brute",
+    "name-orig": "Brute",
+    "description": "Reliez Athlétisme à la Force au lieu de l'Agilité. Cela inclut également la résistance aux Tests d'Athlétisme.",
+    "description-orig": "Link Athletics to Strength instead of Agility. This includes resisting Athletics Tests as well.",
+    "prerequis": "Le talent nécessite : Force de d6 ; Le talent nécessite : Vigueur de d6"
+  },
+  {
+    "name": "Calcul",
+    "name-orig": "Calculating",
+    "description": "Ignorez jusqu'à 2 points de pénalités sur une action avec une Carte d'Action de cinq ou moins.",
+    "description-orig": "Ignore up to 2 points of penalties on one action with an Action Card of Five or less.",
+    "prerequis": "Le talent nécessite : Astuce de d8"
+  },
+  {
+    "name": "Champion",
+    "name-orig": "Champion",
+    "description": "+2 aux dégâts contre les créatures surnaturellement maléfiques.",
+    "description-orig": "+2 damage vs. supernaturally evil creatures.",
+    "prerequis": "Le talent nécessite : Esprit de d8 ; Le talent nécessite : Compétence Combat de d6"
+  },
+  {
+    "name": "Canalisation",
+    "name-orig": "Channeling",
+    "description": "Réduit le coût en Points de Pouvoir de 1 avec un succès élevé au jet d'activation.",
+    "description-orig": "Reduce Power Point cost by 1 with a raise on the activation roll.",
+    "prerequis": "Le talent nécessite : Personnage Confirmé ; Le talent nécessite : Origines Arcanes"
+  },
+  {
+    "name": "Charismatique",
+    "name-orig": "Charismatic",
+    "description": "Relancez un test de Persuasion tant que ce n'est pas un Échec Critique.",
+    "description-orig": "Reroll a Persuasion test as long as it’s not a Critical Failure.",
+    "prerequis": "Le talent nécessite : Esprit de d8"
+  },
+  {
+    "name": "Chi",
+    "name-orig": "Chi",
+    "description": "Une fois par combat, relancez une attaque ratée, faites relancer une attaque réussie par un adversaire, ou retirez Secoué, Distrait, Fatigue ou Vulnérable de vous-même ou d'un allié adjacent.",
+    "description-orig": "Once per combat, reroll a missed attack, force an opponent to reroll a successful attack, or remove Shaken, Distract, Fatigue, or Vulnerable from yourself or an adjacent ally.",
+    "prerequis": "Le talent nécessite : Personnage Confirmé"
+  }
+]
